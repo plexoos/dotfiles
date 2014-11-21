@@ -1,0 +1,34 @@
+[user]
+   name = Dmitri Smirnov
+   email = d.s@plexoos.com
+[diff]
+   tool = vimdiff
+	context = 10
+[merge]
+   tool = vimdiff
+[color]
+   diff = auto
+   status = auto
+   branch = auto
+   interactive = auto
+   ui = true
+   pager = true
+[core]
+   editor = vim
+[alias]
+   dfw = diff --ignore-space-change -w -B
+   st = status --column
+   ci = commit
+   chp = cherry-pick
+   br = branch
+   co = checkout
+   df = diff
+   lg = log -p
+   fp = format-patch
+   sm = submodule
+   mt = mergetool
+   rb = rebase
+[push]
+	default = simple
+[add]
+	context = 3
