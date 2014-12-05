@@ -3,7 +3,7 @@
    email = d.s@plexoos.com
 [diff]
    tool = vimdiff
-	context = 10
+	context = 3
 [merge]
    tool = vimdiff
 [color]
