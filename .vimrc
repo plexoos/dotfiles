@@ -61,5 +61,5 @@ command! TrimAndExpand :call TrimAndExpand()
 " DoxygenToolkit settings (http://www.vim.org/scripts/script.php?script_id=987)
 let g:DoxygenToolkit_authorName="Dmitri Smirnov <d.s@plexoos.com>"
 
-set statusline=%F\ c%c\ b%n
+set statusline=%f\ %h%m%r%w\ b%n
 set diffopt+=iwhite
