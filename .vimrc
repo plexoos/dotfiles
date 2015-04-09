@@ -19,13 +19,32 @@ set bs=2                " allow backspacing over everything in insert mode
 set autoindent          " always set autoindenting on
 set cindent
 set smartindent
-set backup              " keep a backup file
 set viminfo='20,\"5000  " read/write a .viminfo file, don't store more than 5000 lines of registers
 set history=500         " keep 500 lines of command line history
 set ruler               " show the cursor position all the time
 set autochdir           " follow current/selected file directory
-set backupdir=~/.vim_backups,.,/tmp
-set directory=~/.vim_backups,.,/tmp
+
+" Turn swap files ON
+if isdirectory($HOME."/.vim-swap") == 0
+   :silent !mkdir -p ~/.vim-swap
+endif
+set swapfile
+set directory=~/.vim-swap//
+
+" Turn backup files ON
+if isdirectory($HOME."/.vim-backup") == 0
+   :silent !mkdir -p ~/.vim-backup
+endif
+set backup
+set backupdir=~/.vim-backup//
+
+" Turn undofiles ON
+if isdirectory($HOME."/.vim-undo") == 0
+   :silent !mkdir -p ~/.vim-undo
+endif
+set undofile
+set undodir=~/.vim-undo//
+
 set hlsearch
 set mouse=a
 set t_kD=[3~       " has something to do with the delete or backspace keys ?
