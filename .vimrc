@@ -24,6 +24,9 @@ set history=500         " keep 500 lines of command line history
 set ruler               " show the cursor position all the time
 set autochdir           " follow current/selected file directory
 
+" I don't like how the automatic indentation works in cmake files
+autocmd BufRead,BufNewFile *.cmake,CMakeLists.txt,*.cmake.in set nocindent
+
 " Turn swap files ON
 if isdirectory($HOME."/.vim-swap") == 0
    :silent !mkdir -p ~/.vim-swap
