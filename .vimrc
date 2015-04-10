@@ -85,4 +85,5 @@ set diffopt+=iwhite
 
 " vim-airline settings
 set laststatus=2
+let g:airline_theme = 'sol'
 let g:airline_section_c = '%F %h%m%r%w b%n'
