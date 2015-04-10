@@ -82,3 +82,7 @@ let g:DoxygenToolkit_authorName="Dmitri Smirnov <d.s@plexoos.com>"
 
 set statusline=%f\ %h%m%r%w\ b%n
 set diffopt+=iwhite
+
+" vim-airline settings
+set laststatus=2
+let g:airline_section_c = '%F %h%m%r%w b%n'
