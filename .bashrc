@@ -1,3 +1,5 @@
+#!/usr/bin/env bash
+
 # Command line
 PS1="[\u@\H:\w]\n$"
 
