@@ -12,6 +12,11 @@ export LS_COLORS='di=01;94:fi=0:ln=31:pi=5:so=5:bd=5:cd=5:or=31:mi=0:ex=35:*.rpm
 export EDITOR=vim
 export PATH=~/usr/local/bin:~/bin:$PATH:./
 
+# Non-default paths for my local compilers used by cmake
+export CC=/afs/rhic.bnl.gov/rcassoft/x8664_sl6/gcc482/bin/gcc
+export CXX=/afs/rhic.bnl.gov/rcassoft/x8664_sl6/gcc482/bin/g++
+export LD_LIBRARY_PATH+=":/afs/rhic.bnl.gov/rcassoft/x8664_sl6/gcc482/lib"
+
 command_exists () {
     type "$1" &> /dev/null ;
 }
