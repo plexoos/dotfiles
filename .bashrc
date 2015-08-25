@@ -27,12 +27,13 @@ alias lh="$MYCMD_LS -lh"
 alias la="$MYCMD_LS -lah"
 alias hgrep="history | grep"
 alias mygitk="gitk --all&"
-alias abs="find `pwd` -samefile"
 alias mycondor_q="condor_q smirnovd"
 
 function duf {
    du -h "$@" | sort -rn | while read size fname; do for unit in k M G T P E Z Y; do if [ $size -lt 1024 ]; then echo -e "${size}${unit}\t${fname}"; break; fi; size=$((size/1024)); done; done
 }
+
+mkcdir() { mkdir -p -- "$1" && cd -P -- "$1"; }
 
 set autolist
 #set filesc
