@@ -83,7 +83,7 @@ command! TrimAndExpand :call TrimAndExpand()
 let g:DoxygenToolkit_authorName="Dmitri Smirnov <d.s@plexoos.com>"
 
 set statusline=%f\ %h%m%r%w\ b%n
-set diffopt+=iwhite
+set diffopt+=iwhite,horizontal
 
 " vim-airline settings
 set laststatus=2
