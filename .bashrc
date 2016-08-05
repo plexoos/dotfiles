@@ -10,6 +10,7 @@ stty -ctlecho
 
 export LS_COLORS='di=01;94:fi=0:ln=31:pi=5:so=5:bd=5:cd=5:or=31:mi=0:ex=35:*.rpm=90'
 export EDITOR=vim
+export VISUAL=vim
 export PATH=.:~/usr/local/bin:$PATH
 
 # Non-default paths for my local compilers used by cmake
