@@ -34,6 +34,7 @@ alias la="$MYCMD_LS -lah"
 alias hgrep="history | grep"
 alias mygitk="gitk --all&"
 alias mycondor_q="condor_q smirnovd"
+alias vimdiff="vimdiff -o"
 
 function duf {
    du -h "$@" | sort -rn | while read size fname; do for unit in k M G T P E Z Y; do if [ $size -lt 1024 ]; then echo -e "${size}${unit}\t${fname}"; break; fi; size=$((size/1024)); done; done
