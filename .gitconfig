@@ -18,6 +18,7 @@
 [alias]
    dfw = diff --ignore-space-change -w -B
    st = status --column
+   st-dirty = status --column --ignore-submodules=dirty
    ci = commit
    chp = cherry-pick
    br = branch
