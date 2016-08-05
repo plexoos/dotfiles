@@ -63,7 +63,6 @@ set ignorecase
 set smartcase
 set wildmode=list:longest
 set textwidth=120
-set winwidth=999            " use CTRL-W |
 set formatoptions=tcroql12
 set incsearch
 set shortmess+=A
