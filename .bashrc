@@ -23,9 +23,9 @@ command_exists () {
 }
 
 if command_exists gls ; then
-   export MYCMD_LS='gls --color'
+   export MYCMD_LS='gls --color=auto'
 else
-   export MYCMD_LS='ls --color'
+   export MYCMD_LS='ls --color=auto'
 fi
 
 alias ls="$MYCMD_LS"
