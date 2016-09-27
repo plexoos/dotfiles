@@ -89,3 +89,5 @@ set diffopt+=iwhite
 set laststatus=2
 let g:airline_theme = 'sol'
 let g:airline_section_c = '%F %h%m%r%w b%n'
+" Prevent airline status line from being truncated when windows split vertically
+let g:airline#extensions#default#section_truncate_width = {}
