@@ -67,7 +67,9 @@ set formatoptions=tcroql12
 set incsearch
 set shortmess+=A
 set foldmethod=syntax
-set foldnestmax=1
+set foldnestmax=1           " use =1 for typical C++ class
+set foldlevel=2
+set foldlevelstart=1
 
 map <F2> :ls<CR>:b
 map <F3> a<C-R>=strftime("%d %b %Y")<CR><Esc>
