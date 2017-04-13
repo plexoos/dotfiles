@@ -42,6 +42,36 @@ function duf {
 
 mkcdir() { mkdir -p -- "$1" && cd -P -- "$1"; }
 
+
+# Takes a path as first argument or defaults to current dir "./"
+rmorig()
+{
+    file_list=(`find "${1:-./}" -name "*.orig"`)
+
+    if [ ${#file_list[@]} -eq 0 ]
+    then
+        echo "No \"*.orig\" files found"
+    else
+        echo "Files to delete in ${1:-./}:"
+        printf '%s\n' "${file_list[@]}"
+        confirm && rm "${file_list[@]}"
+    fi
+}
+
+
+# Call with a prompt string or use a default
+confirm()
+{
+    read -r -p "${1:-Are you sure? [y/n]} " response
+    if [[ "$response" =~ ^([yY][eE][sS]|[yY])+$ ]]
+    then
+        true
+    else
+        false
+    fi
+}
+
+
 set autolist
 #set filesc
 #set nobeep
