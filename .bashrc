@@ -43,16 +43,18 @@ function duf {
 mkcdir() { mkdir -p -- "$1" && cd -P -- "$1"; }
 
 
-# Takes a path as first argument or defaults to current dir "./"
-rmorig()
+# First argument is a wildcard to match file names, defaults to "*.orig"
+# Second argument is a path to traverse, defaults to current dir "./"
+rmrec()
 {
-    file_list=(`find "${1:-./}" -name "*.orig"`)
+    file_pattern=${1:-*.orig}
+    file_list=(`find "${2:-./}" -name "${file_pattern}"`)
 
     if [ ${#file_list[@]} -eq 0 ]
     then
-        echo "No \"*.orig\" files found"
+        echo "No \"${file_pattern}\" files found"
     else
-        echo "Files to delete in ${1:-./}:"
+        echo "Files to delete in ${2:-./}:"
         printf '%s\n' "${file_list[@]}"
         confirm && rm "${file_list[@]}"
     fi
