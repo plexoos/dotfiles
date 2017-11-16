@@ -71,7 +71,4 @@ confirm()
 }
 
 
-set autolist
-#set filesc
-#set nobeep
 declare -x LANG="en_US"
