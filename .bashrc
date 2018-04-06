@@ -11,7 +11,6 @@ stty -ctlecho
 export LS_COLORS='di=01;94:fi=0:ln=31:pi=5:so=5:bd=5:cd=5:or=31:mi=0:ex=35'
 export EDITOR=vim
 export VISUAL=vim
-export PATH=.:~/usr/local/bin:$PATH
 
 
 setup-root()
@@ -228,3 +227,9 @@ declare -x LANG="en_US"
 shopt -s direxpand
 # Silence terminal bell
 xset -b
+
+# added by Anaconda3 4.4.0 installer
+export PATH="${HOME}/anaconda3/bin:$PATH"
+
+# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
+export PATH="$PATH:$HOME/.rvm/bin"
