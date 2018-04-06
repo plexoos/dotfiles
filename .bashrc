@@ -8,7 +8,7 @@ PS1="[\u@\H:\w]\n$"
 # Do not echo ^C back to terminal
 stty -ctlecho
 
-export LS_COLORS='di=01;94:fi=0:ln=31:pi=5:so=5:bd=5:cd=5:or=31:mi=0:ex=35:*.rpm=90'
+export LS_COLORS='di=01;94:fi=0:ln=31:pi=5:so=5:bd=5:cd=5:or=31:mi=0:ex=35'
 export EDITOR=vim
 export VISUAL=vim
 export PATH=.:~/usr/local/bin:$PATH
@@ -33,8 +33,10 @@ alias mytig="tig --all"
 alias mycondor_q="condor_q smirnovd"
 alias vimdiff="vimdiff -o"
 
+
+
 function duf {
-   du -h "$@" | sort -rn | while read size fname; do for unit in k M G T P E Z Y; do if [ $size -lt 1024 ]; then echo -e "${size}${unit}\t${fname}"; break; fi; size=$((size/1024)); done; done
+    du -h "$@" | sort -rn | while read size fname; do for unit in k M G T P E Z Y; do if [ $size -lt 1024 ]; then echo -e "${size}${unit}\t${fname}"; break; fi; size=$((size/1024)); done; done
 }
 
 mkcdir() { mkdir -p -- "$1" && cd -P -- "$1"; }
@@ -72,3 +74,4 @@ confirm()
 
 
 declare -x LANG="en_US"
+shopt -s direxpand
