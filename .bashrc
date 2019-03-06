@@ -33,6 +33,7 @@ alias lh="$MYCMD_LS -lh"
 alias la="$MYCMD_LS -lah"
 alias hgrep="history | grep"
 alias mygitk="gitk --all&"
+alias mytig="tig --all"
 alias mycondor_q="condor_q smirnovd"
 alias vimdiff="vimdiff -o"
 
