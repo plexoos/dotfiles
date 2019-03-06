@@ -1,0 +1,8 @@
+bind generic + !@sh -c "echo -n %(commit) | xclip -selection c"
+
+bind main a !git commit --amend
+bind main ^ !git cherry-pick %(commit)
+bind main ~ !git revert %(commit)
+bind main @ ?git reset --hard %(commit)
+
+color main-head			red	default	bold
