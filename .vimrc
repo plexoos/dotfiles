@@ -3,6 +3,14 @@ set t_Co=16 " number of colors
 " pathogen.vim makes it super easy to install plugins and runtime files in their own private directories
 execute pathogen#infect()
 
+" Start Minimalist Vim Plugin Manager https://github.com/junegunn/vim-plug
+call plug#begin()
+Plug 'https://github.com/junegunn/vim-easy-align'
+Plug 'https://github.com/tweekmonster/braceless.vim'
+Plug 'https://github.com/jeetsukumaran/vim-indentwise'
+call plug#end()
+
+
 syntax enable
 set background=dark
 let g:solarized_termcolors= 16
