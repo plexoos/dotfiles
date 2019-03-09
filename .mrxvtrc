@@ -1,4 +1,4 @@
-mrxvt.saveLines:                        50000
+mrxvt.saveLines:                        65535
 mrxvt.foreground:                       #ddd6d3
 mrxvt.background:                       #002b36
 mrxvt.holdExitTitle:                    (Done) %t
@@ -104,5 +104,5 @@ mrxvt.disableMacros:                    False
 mrxvt.linuxHomeEndKey:                  False
 mrxvt.cutChars:                         :=/~#@?%&_-.0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ0abcdefghijklmnopqrstuvwxyz
 mrxvt.sessionMgt:                       False
-mrxvt.initTermNumber:                   12
+mrxvt.initProfileList:                  1,2,3,4,5,6,7,8,9,10,11,12
 mrxvt.useFifo:                          False
