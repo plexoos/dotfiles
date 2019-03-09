@@ -13,10 +13,6 @@ export EDITOR=vim
 export VISUAL=vim
 export PATH=.:~/usr/local/bin:$PATH
 
-# Non-default paths for my local compilers used by cmake
-export CC=/afs/rhic.bnl.gov/rcassoft/x8664_sl6/gcc482/bin/gcc
-export CXX=/afs/rhic.bnl.gov/rcassoft/x8664_sl6/gcc482/bin/g++
-export LD_LIBRARY_PATH+=":/afs/rhic.bnl.gov/rcassoft/x8664_sl6/gcc482/lib"
 
 command_exists () {
     type "$1" &> /dev/null ;
