@@ -51,9 +51,9 @@ set undodir=~/.vim-undo//
 set hlsearch
 set mouse=a
 set t_kD=[3~       " has something to do with the delete or backspace keys ?
-set noexpandtab
-set tabstop=3
-set shiftwidth=3
+set expandtab
+set tabstop=4
+set shiftwidth=4
 set nosmarttab
 set list listchars=eol:$,tab:\|\ ,trail:.,extends:&
 set nolist
