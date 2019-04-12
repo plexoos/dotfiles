@@ -51,6 +51,52 @@ setup-root()
     export ROOT_LEVEL=`root-config --version`
 }
 
+
+setup-gcc()
+{
+    local GCC_VERSION=${1:-"4"}
+
+    case "${GCC_VERSION}" in
+    "4")
+       unset CC
+       unset CXX
+       local GCC_LD_LIBRARY_PATH_NEW=""
+       local GCC_PATH_NEW=""
+       ;;
+    "5")
+       export CC="/home/smirnovd/usr/local/gcc/5.5.0/bin/gcc"
+       export CXX="/home/smirnovd/usr/local/gcc/5.5.0/bin/g++"
+       local GCC_LD_LIBRARY_PATH_NEW="${HOME}/usr/local/gcc/5.5.0/lib64:"
+       local GCC_PATH_NEW="/home/smirnovd/usr/local/gcc/5.5.0/bin:"
+       ;;
+    "7")
+       export CC="/home/smirnovd/usr/local/gcc/7.3.0/bin/gcc"
+       export CXX="/home/smirnovd/usr/local/gcc/7.3.0/bin/g++"
+       local GCC_LD_LIBRARY_PATH_NEW="${HOME}/usr/local/gcc/7.3.0/lib64:"
+       local GCC_PATH_NEW="/home/smirnovd/usr/local/gcc/7.3.0/bin:"
+       ;;
+    "8")
+       export CC="/home/smirnovd/usr/local/gcc/8.1.0/bin/gcc"
+       export CXX="/home/smirnovd/usr/local/gcc/8.1.0/bin/g++"
+       local GCC_LD_LIBRARY_PATH_NEW="${HOME}/usr/local/gcc/8.1.0/lib64:"
+       local GCC_PATH_NEW="/home/smirnovd/usr/local/gcc/8.1.0/bin:"
+       ;;
+    *)
+       echo -e "ERROR: GCC version must be selected [4|5|7|8]"
+       ;;
+    esac
+
+    # in case GCC_PATH is define remove it from LD_LIBRARY_PATH
+    export LD_LIBRARY_PATH="${PATH/"$GCC_PATH"/}"
+    export GCC_PATH="${GCC_PATH_NEW}"
+    export PATH="${GCC_PATH}$PATH"
+
+    # in case GCC_LD_LIBRARY_PATH is define remove it from LD_LIBRARY_PATH
+    export LD_LIBRARY_PATH="${LD_LIBRARY_PATH/"$GCC_LD_LIBRARY_PATH"/}"
+    export GCC_LD_LIBRARY_PATH="${GCC_LD_LIBRARY_PATH_NEW}"
+    export LD_LIBRARY_PATH="${GCC_LD_LIBRARY_PATH}$LD_LIBRARY_PATH"
+}
+
 command_exists () {
     type "$1" &> /dev/null ;
 }
