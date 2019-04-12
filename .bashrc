@@ -14,6 +14,43 @@ export VISUAL=vim
 export PATH=.:~/usr/local/bin:$PATH
 
 
+setup-root()
+{
+    local ROOT_VERSION=${1:-"5"}
+    local BUILD_BIN_BITS=${2:-"32"}
+    local BUILD_OPTS=${3:-"def"}
+    local ROOT_OPTION="${ROOT_VERSION}_${BUILD_BIN_BITS}_${BUILD_OPTS}"
+
+    case "${ROOT_OPTION}" in
+    "5_32_afs")
+       source /afs/rhic.bnl.gov/star/ROOT/5.34.30/.sl74_gcc485/rootdeb/bin/thisroot.sh
+       ;;
+    "5_32_def")
+       source /scratch/smirnovd/root_v5-34-30_32/bin/thisroot.sh
+       ;;
+    "5_32_sse")
+       source /scratch/smirnovd/root_v5-34-30_32_sse/bin/thisroot.sh
+       ;;
+    "5_64_afs")
+       source /afs/rhic.bnl.gov/star/ROOT/5.34.30/.sl74_x8664_gcc485/rootdeb/bin/thisroot.sh
+       ;;
+    "5_64_def")
+       source /scratch/smirnovd/root_v5-34-30_64/bin/thisroot.sh
+       ;;
+    "6_32_def")
+       source /scratch/smirnovd/root_v6-13-04_32/bin/thisroot.sh
+       ;;
+    "6_64_def")
+       source /scratch/smirnovd/root_v6-13-04_64/bin/thisroot.sh
+       ;;
+    *)
+       echo -e "ERROR: Proper ROOT version must be selected [5|6] [32|64] [def|sse|afs]"
+       ;;
+    esac
+
+    export ROOT_LEVEL=`root-config --version`
+}
+
 command_exists () {
     type "$1" &> /dev/null ;
 }
