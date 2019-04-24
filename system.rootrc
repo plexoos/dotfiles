@@ -1,0 +1,257 @@
+# @(#)root/config:$Name: HEAD $:$Id: system.rootrc,v 1.7 2009/02/03 18:00:35 jeromel Exp $
+# Author: Fons Rademakers  22/09/95
+
+# ROOT Environment settings are handled via the class TEnv. To see
+# which values are active do: gEnv->Print().
+
+# Path used by dynamic loader to find shared libraries and macros
+# Paths are different for Unix and Windows. The example shows the defaults
+# for all ROOT applications for either Unix or Windows.
+Unix.*.Root.DynamicPath:    .:$(LD_LIBRARY_PATH)
+Unix.*.Root.MacroPath:      .:./StRoot/macros:./StRoot/macros/graphics:./StRoot/macros/analysis:./StRoot/macros/test:./StRoot/macros/examples:./StRoot/macros/html:./StRoot/macros/qa:./StRoot/macros/calib:./StRoot/macros/mudst:$(STAR)/StRoot/macros:$(STAR)/StRoot/macros/graphics:$(STAR)/StRoot/macros/analysis:$(STAR)/StRoot/macros/test:$(STAR)/StRoot/macros/examples:$(STAR)/StRoot/macros/html:$(STAR)/StRoot/macros/qa:$(STAR)/StRoot/macros/calib:$(STAR)/StRoot/macros/mudst:$(ROOTSYS)/macros:$(ROOTSYS)/tutorials
+
+Unix.*.Root.IncludePath:     -I.$(STAR_HOST_SYS)/include -I./StRoot -I$STAR/.$(STAR_HOST_SYS)/include  -I$(STAR)/StRoot  -I$(ROOTSYS)/include 
+Unix.*.Root.LinkedLibs:      -L$(ROOTSYS)/lib -lBase
+
+WinNT.*.Root.DynamicPath:   .intel_wnt/root/bin;$(ROOTSYS)/bin;$(PATH)
+WinNT.*.Root.MacroPath:     ./;$(home)/root/macros;$(ROOTSYS)/tutorials;$(ROOTSYS)/star/macros;$(ROOTSYS)/macros
+WinNT.*.Root.IncludePath:    -I%ROOTSYS%/include
+WinNT.*.Root.LinkedLibs:     %ROOTSYS%/lib/*.lib msvcrt.lib
+
+# ROOT 5.18 and higher the the Plugin directories
+# Path used to find plugin macros.
+# Paths are different for Unix and Windows. The example shows the defaults
+# for all ROOT applications for either Unix or Windows.
+Unix.*.Root.PluginPath:      :./plugins:$(HOME)/plugins:StRoot/macros/plugins:$(STAR)/StRoot/macros/plugins:./QtRoot/plugins:$(STAR)/QtRoot/plugins:$(ROOTSYS)/etc/plugins:
+WinNT.*.Root.PluginPath:     ;$(ROOTSYS)/etc/plugins;
+
+# Path where to look for TrueType fonts
+Unix.*.Root.UseTTFonts:     true
+Unix.*.Root.TTFontPath:     $(ROOTSYS)/fonts
+
+# Use thread library (if exists)
+Unix.*.Root.UseThreads:     false
+
+# Show where item is found in the specified path
+Root.ShowPath:           false
+
+# Activate memory statistics (size and cnt is used to trap allocation of
+# blocks of a certain size after cnt times)
+Root.MemStat:            0
+Root.MemStat.size:      -1
+Root.MemStat.cnt:       -1
+Root.ObjectStat:         0
+
+# Activate memory leak checker (use in conjunction with $ROOTSYS/bin/memprobe)
+# Currently only works on Linux with gcc.
+Root.MemCheck:           0
+Root.MemCheckFile:       memcheck.out
+
+# Global debug mode. When >0 turns on progressively more details debugging.
+Root.Debug:              0
+Root.Stacktrace:         no
+
+# Settings for X11 behaviour.
+X11.Sync:                no
+X11.FindBestVisual:      yes
+
+# Default editor
+Unix.*.Editor:           xemacs
+WinNT.*.Editor:          notepad
+
+# Specify list of file endings which TTabCom (TAB completion) should ignore.
+#TabCom.FileIgnore:       .cpp:.h:.cmz
+
+# TCanvas specific settings. Opaque move and resize show full pad during
+# the operation instead of only the outline. Especially for resize you'll
+# need serious CPU power. UseScreenFactor=true means to size canvas according
+# to size of screen, so a canvas still looks good on a low resolution
+# laptop screen without having to change canvas size in macros.
+# HighLightColor 2 = red. ShowEventStatus allows the event status bar to
+# be turned on by default. AutoExec allows TExec objects to be executed
+# on mouse and key events.
+Canvas.MoveOpaque:          false
+Canvas.ResizeOpaque:        false
+Canvas.UseScreenFactor:     true
+Canvas.HighLightColor:      2
+Canvas.ShowEventStatus:     false
+Canvas.ShowToolBar:         false
+Canvas.ShowEditor:          false
+Canvas.AutoExec:            true
+Canvas.PrintDirectory       .
+
+# Default histogram binnings for TTree::Draw()
+Hist.Binning.1D.x:          100
+
+Hist.Binning.2D.x:           40
+Hist.Binning.2D.y:           40
+Hist.Binning.2D.Prof:       100
+
+Hist.Binning.3D.x:           20
+Hist.Binning.3D.y:           20
+Hist.Binning.3D.z:           20
+Hist.Binning.3D.Profx:      100
+Hist.Binning.3D.Profy:      100
+
+# THtml specific settings (for more see doc of THtml class)
+Unix.*.Root.Html.SourceDir:  .:src:include
+WinNT.*.Root.Html.SourceDir: .;src;include
+Root.Html.OutputDir:        html/
+#Root.Html.OutputDir:        htmldoc/
+#Root.Html.Homepage:
+#Root.Html.Header:
+#Root.Html.Footer:
+#Root.Html.Description:      //____________________
+#Root.Html.Author:           // Author:
+#Root.Html.LastUpdate:       // @(#)
+#Root.Html.Copyright:        * Copyright
+
+# GUI specific settings
+Gui.Backend:                native
+Gui.Factory:                native
+Gui.DefaultFont:            -adobe-helvetica-medium-r-*-*-12-*-*-*-*-*-iso8859-1
+Gui.MenuFont:               -adobe-helvetica-medium-r-*-*-12-*-*-*-*-*-iso8859-1
+Gui.MenuHiFont:             -adobe-helvetica-bold-r-*-*-12-*-*-*-*-*-iso8859-1
+Gui.DocFixedFont:           -adobe-courier-medium-r-*-*-12-*-*-*-*-*-iso8859-1
+Gui.DocPropFont:            -adobe-helvetica-medium-r-*-*-12-*-*-*-*-*-iso8859-1
+Gui.IconFont:               -adobe-helvetica-medium-r-*-*-10-*-*-*-*-*-iso8859-1
+Gui.StatusFont:             -adobe-helvetica-medium-r-*-*-10-*-*-*-*-*-iso8859-1
+Gui.BackgroundColor:         #c0c0c0
+Gui.ForegroundColor:         black
+Gui.SelectBackgroundColor:   #000080
+Gui.SelectForegroundColor:   white
+Gui.DocumentBackgroundColor: white
+Gui.DocumentForegroundColor: black
+Gui.TooltipBackgroundColor:  LightYellow
+Gui.TooltipForegroundColor:  black
+Gui.IconPath:                $(HOME)/icons:$(ROOTSYS)/icons:.
+Gui.MimeTypeFile:            $(HOME)/.root.mimes
+# If above does not exists defaults to this:
+#Gui.MimeTypeFile:            $(ROOTSYS)/etc/root.mimes
+# Can be either small, big, list, details
+Browser.IconStyle:           small
+# Can be either name, type, size, date
+Browser.SortBy:              name
+Browser.GroupView:           10000
+Browser.ShowHidden:          no
+Browser.AutoThumbnail:       yes
+
+# Rint (interactive ROOT executable) specific alias, logon and logoff macros
+#Rint.Load:               rootalias.C
+#Rint.Logon:              rootlogon.C
+#Rint.Logoff:             rootlogoff.C
+Rint.Load:               $(ROOTSYS)/tutorials/rootalias.C
+Rint.Logon:              $(ROOTSYS)/etc/rootlogon.C
+Rint.Logoff:             $(ROOTSYS)/etc/rootlogoff.C
+
+# Record session commands, set to "-" to turn off command recording
+Rint.History:            $(HOME)/.root_hist
+
+# ACLiC customization.
+# ACLiC.Linkdef specifies the suffix that will be added to the script name to
+# try to locate a custom linkdef file when generating the dictionary.
+ACLiC.Linkdef:          _linkdef
+
+# Default authentication method for rootd (0=clear, 1=SRP, 2=Krb5)
+Rootd.Authentication:   0
+
+# Default authentication method for proofd (0=clear, 1=SRP, 2=Krb5)
+Proofd.Authentication:  0
+Proofd.StaticSlaves:    yes
+
+# Plugin library handlers.
+Plugin.TFile:        ^rfio:    TRFIOFile     RFIO    "TRFIOFile(const char*,Option_t*,const char*,Int_t)"
++Plugin.TFile:       ^castor:  TCastorFile   RFIO    "TCastorFile(const char*,Option_t*,const char*,Int_t,Int_t)"
++Plugin.TFile:       ^dcache:  TDCacheFile   DCache  "TDCacheFile(const char*,Option_t*,const char*,Int_t)"
++Plugin.TFile:       ^dcap:    TDCacheFile   DCache  "TDCacheFile(const char*,Option_t*,const char*,Int_t)"
++Plugin.TFile:       ^gfal:    TGFALFile     GFAL    "TGFALFile(const char*,Option_t*,const char*,Int_t)"
++Plugin.TFile:       ^chirp:   TChirpFile    Chirp   "TChirpFile(const char*,Option_t*,const char*,Int_t)"
++Plugin.TFile:       ^alien:   TAlienFile    RAliEn  "TAlienFile(const char*,Option_t*,const char*,Int_t,Bool_t)"
++Plugin.TFile:       .+[.]xml$ TXMLFile      XMLIO   "TXMLFile(const char*,Option_t*,const char*,Int_t)"
++Plugin.TFile:       ^mysql:   TSQLFile      SQL     "TSQLFile(const char*,Option_t*,const char*,const char*)"
++Plugin.TFile:       ^oracle:  TSQLFile      SQL     "TSQLFile(const char*,Option_t*,const char*,const char*)"
++Plugin.TFile:       ^root:    TXNetFile     Netx    "TXNetFile(const char*,Option_t*,const char*,Int_t,Int_t,Bool_t)"
+Plugin.TSystem:      ^rfio:    TRFIOSystem   RFIO    "TRFIOSystem()"
++Plugin.TSystem:     ^castor:  TRFIOSystem   RFIO    "TRFIOSystem()"
++Plugin.TSystem:     ^dcache:  TDCacheSystem DCache  "TDCacheSystem()"
++Plugin.TSystem:     ^dcap:    TDCacheSystem DCache  "TDCacheSystem()"
++Plugin.TSystem:     ^alien:   TAlienSystem  RAliEn  "TAlienSystem()"
++Plugin.TSystem:     ^root:    TXNetSystem   Netx    "TXNetSystem(const char *,Bool_t)"
+Plugin.TArchiveFile: .+[.]zip$ TZIPFile      Core    "TZIPFile(const char*,const char*,TFile*)"
+Plugin.TSQLServer:   ^mysql:   TMySQLServer  MySQL   "TMySQLServer(const char*,const char*,const char*)"
++Plugin.TSQLServer:  ^pgsql:   TPgSQLServer  PgSQL   "TPgSQLServer(const char*,const char*,const char*)"
++Plugin.TSQLServer:  ^sapdb:   TSapDBServer  SapDB   "TSapDBServer(const char*,const char*,const char*)"
++Plugin.TSQLServer:  ^oracle:  TOracleServer Oracle  "TOracleServer(const char*,const char*,const char*)"
++Plugin.TSQLServer:  ^odbc:    TODBCServer   RODBC    "TODBCServer(const char*,const char*,const char*)"
++Plugin.TSQLServer:  ^odbcn:   TODBCServer   RODBC    "TODBCServer(const char*,const char*,const char*)"
++Plugin.TSQLServer:  ^odbcd:   TODBCServer   RODBC    "TODBCServer(const char*,const char*,const char*)"
+Plugin.TGrid:        ^alien    TAlien        RAliEn  "TAlien(const char*,const char*,const char*,const char*)"
+Plugin.TVirtualAuth:    Root   TRootAuth     RootAuth     "TRootAuth()"
+Plugin.TVirtualPad:         *  TPad          Gpad         "TPad()"
+Plugin.TVirtualHistPainter: *  THistPainter  HistPainter  "THistPainter()"
+Plugin.TVirtualTreePlayer:  *  TTreePlayer   TreePlayer   "TTreePlayer()"
+Plugin.TVirtualTreeViewer:  *  TTreeViewer   TreeViewer   "TTreeViewer(const TTree*)"
+Plugin.TSessionViewer:      *  TSessionViewer TreeViewer  "TSessionViewer()"
+Plugin.TVirtualGeoPainter:  *  TGeoPainter   GeomPainter  "TGeoPainter(TGeoManager*)"
+Plugin.TGeoManagerEditor:   *  TGeoManagerEditor  GeomBuilder  "LoadLib()"
+Plugin.TVirtualUtil3D:      *  TUtil3D       Graf3d       "TUtil3D()"
+Plugin.TVirtualUtilHist:    *  TUtilHist     Hist         "TUtilHist()"
+Plugin.TVirtualUtilPad:     *  TUtilPad      Gpad         "TUtilPad()"
+Plugin.TVirtualFitter:  Minuit  TFitter        Minuit     "TFitter(Int_t)"
++Plugin.TVirtualFitter: Fumili  TFumili        Fumili     "TFumili(Int_t)"
++Plugin.TVirtualFitter: Minuit2 TFitterMinuit  Minuit2    "TFitterMinuit(Int_t)"
++Plugin.TVirtualFitter: Fumili2 TFitterFumili  Minuit2    "TFitterFumili(Int_t)"
+Plugin.TVirtualPS:      ps     TPostScript   Postscript   "TPostScript()"
++Plugin.TVirtualPS:     svg    TSVG          Postscript   "TSVG()"
++Plugin.TVirtualPS:     pdf    TPDF          Postscript   "TPDF()"
++Plugin.TVirtualPS:     image  TImageDump    Postscript   "TImageDump()"
+Plugin.TViewerX3D:      x11    TViewerX3D    X3d          "TViewerX3D(TVirtualPad*,Option_t*,const char*,UInt_t,UInt_t)"
++Plugin.TViewerX3D:     qt     TQtViewerX3D  QtX3d        "TQtViewerX3D(TVirtualPad*,Option_t*,const char*,UInt_t,UInt_t)"
+Plugin.TMinuitGraph:        *  TGraph        Graf         "TGraph(Int_t,const Double_t*,const Double_t*)"
+Plugin.TImage:              *  TASImage      ASImage      "TASImage()"
+Plugin.TPaletteEditor:      *  TASPaletteEditor  ASImageGui  "TASPaletteEditor(TAttImage*,UInt_t,UInt_t)"
+Plugin.TImagePlugin:     ps    TASPluginGS   ASPluginGS   "TASPluginGS(const char*)"
++Plugin.TImagePlugin:    eps   TASPluginGS   ASPluginGS   "TASPluginGS(const char*)"
++Plugin.TImagePlugin:    pdf   TASPluginGS   ASPluginGS   "TASPluginGS(const char*)"
+Plugin.TFileDrawMap         *  TFileDrawMap  TreePlayer   "TFileDrawMap(const TFile*, const char*, const char*)"
+Plugin.TVirtualX:    x11       TGX11         GX11         "TGX11(const char*,const char*)"
++Plugin.TVirtualX:   x11ttf    TGX11TTF      GX11TTF      "TGX11TTF()"
++Plugin.TVirtualX:   win32     TGWin32       Win32        "TGWin32(const char*,const char*)"
++Plugin.TVirtualX:   win32gdk  TGWin32       Win32gdk     "TGWin32(const char*,const char*)"
++Plugin.TVirtualX:   qt        TGQt          GQt          "TGQt(const char*,const char*)"
+Plugin.TGuiFactory:  root      TRootGuiFactory Gui        "TRootGuiFactory()"
++Plugin.TGuiFactory: win32     TWin32GuiFactory Win32     "TWin32GuiFactory()"
++Plugin.TGuiFactory: qt        TQtRootGuiFactory QtRoot   "TQtRootGuiFactory()"
+Plugin.TGPasswdDialog: *       TGPasswdDialog Gui         "TGPasswdDialog(const char*,char*,Int_t,UInt_t,UInt_t)"
+Plugin.TVirtualProof:  ^condor: TProofCondor Proof        "TProofCondor(const char*,const char*,const char*,Int_t)"
++Plugin.TVirtualProof: ^sm:    TProofSuperMaster Proof    "TProofSuperMaster(const char*,const char*,const char*,Int_t)"
++Plugin.TVirtualProof: ^peac:  TProofPEAC    Peac         "TProofPEAC(const char*,const char*,const char*,Int_t)"
++Plugin.TVirtualProof:       * TProof        Proof        "TProof(const char*,const char*,const char*,Int_t,const char *)"
+Plugin.TProofProgressDialog: * TProofProgressDialog ProofGui  "TProofProgressDialog(TVirtualProof*,const char*,Int_t,Long64_t,Long64_t)"
+Plugin.TDataProgressDialog:  * TDataProgressDialog  peacGui   "TDataProgressDialog(TVirtualProof*,const char*,Int_t,Long64_t)"
+Plugin.TProofServ:    ^xpd     TXProofServ   Proofx       "TXProofServ(Int_t *,char **)"
+Plugin.TSlave: ^xpd  TXSlave Proofx  "TXSlave(const char *,const char *,Int_t,const char *, TProof *,Int_t,const char *,const char *)"
+Plugin.TVirtualPadEditor:  GedOld TPadEditorOld GedOld    "TPadEditorOld()"
++Plugin.TVirtualPadEditor: Ged    TGedEditor    Ged       "TGedEditor(TCanvas*)"
+Plugin.TVirtualProofMgr: ^std  TProofMgr    Proof        "TProofMgr(const char *,Int_t,const char *)"
++Plugin.TVirtualProofMgr:  ^xpd  TXProofMgr   Proofx       "TXProofMgr(const char *,Int_t,const char *)"
+Plugin.TVirtualViewer3D:    x3d TViewerX3D    X3d   "TViewerX3D(TVirtualPad*)"
++Plugin.TVirtualViewer3D:   ogl TGLSAViewer RGL   "TGLSAViewer(TVirtualPad*)"
++Plugin.TVirtualViewer3D:   gl TGLViewer    RGL "TGLViewer(TVirtualPad*)"
+Plugin.TVirtualDragManager: *   TGuiBldDragManager GuiBld "TGuiBldDragManager()"
+Plugin.TGuiBuilder:         *   TRootGuiBuilder    GuiBld "TRootGuiBuilder()"
+Unix.*.Plugin.TVirtualGLImp:  * TX11GL       RGL          "TX11GL()"
+WinNT.*.Plugin.TVirtualGLImp: * TGWin32GL    RGL          "TGWin32GL()"
+Unix.*.Plugin.TGLManager:   *   TX11GLManager    RGL "TX11GLManager()"
+WinNT.*.Plugin.TGLManager:  *   TGWin32GLManager RGL "TGWin32GLManager()"
+Plugin.TGLHistPainter:        * TGLHistPainter   RGL "TGLHistPainter(TH1*)"
+Plugin.TVirtualFFT:     fftwc2c TFFTComplex     FFTW   "TFFTComplex(Int_t, Int_t *,Bool_t)"
++Plugin.TVirtualFFT:    fftwc2r TFFTComplexReal FFTW   "TFFTComplexReal(Int_t,Int_t *, Bool_t)"
++Plugin.TVirtualFFT:    fftwr2c TFFTRealComplex FFTW   "TFFTRealComplex(Int_t,Int_t *, Bool_t)"
++Plugin.TVirtualFFT:    fftwr2r TFFTReal        FFTW   "TFFTReal(Int_t, Int_t *,Bool_t)"
+
+
+# Example of custom setting for the Rint application (root.exe).
+# This overrides the default specified above for a generic application.
+# Color 5 is yellow.
+Rint.Canvas.HighLightColor:      5
