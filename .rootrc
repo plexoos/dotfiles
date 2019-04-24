@@ -1,0 +1,18 @@
+#Gui.Style:                  windows
+#Gui.Backend:                qt
+#Gui.Factory:                qtgui
+
+# Path used by dynamic loader to find shared libraries
+#Unix.*.Root.DynamicPath: .:$(LD_LIBRARY_PATH)
+#Unix.*.Root.DynamicPath: .:/eic/u/dsmirnov/rootmacros:/eic/u/dsmirnov/rootmacros/utils:$ROOTSYS/lib
+#Unix.*.Root.MacroPath: .:$(STAR)/
+#+Unix.*.Root.MacroPath: $(STAR)/StRoot
+#Unix.*.Root.IncludePath: -I/eic/u/dsmirnov/rootmacros/utils
+#Unix.*.Root.IncludePath: -I$(STAR)/ -I$(STAR)/StRoot
+#Unix.*.Root.LoadLibs: -lroot-helper-utils-shared
+#Unix.*.Root.LinkedLibs: -L/eic/u/dsmirnov/rootmacros/utils -lutils
+#Unix.*.Root.LinkedLibs: -L/star/u/smirnovd/root-helper/build/utils -lroot-helper-utils-shared
+
+Rint.Logon: $(HOME)/dotfiles/rootmacros/rootlogon.C
+Rint.Logoff: $(HOME)/dotfiles/rootmacros/rootlogoff_STAR.C
+Browser.Name: TRootBrowser
