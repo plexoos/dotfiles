@@ -1,0 +1,25 @@
+{
+  "load_extensions": {
+    "nbextensions_configurator/config_menu/main": true,
+    "contrib_nbextensions_help_item/main": true,
+    "vim_binding/vim_binding": true,
+    "toc2/main": true
+  },
+  "toc2": {
+    "skip_h1_title": true,
+    "toc_cell": false
+  },
+  "keys": {
+    "command": {
+      "bind": {
+        "9,9,9": "jupyter-notebook:restart-kernel-and-clear-output",
+        "^": "jupyter-notebook:run-all-cells",
+        "shift-alt-enter": "jupyter-notebook:run-all-cells",
+        "shift-meta-enter": "jupyter-notebook:run-all-cells"
+      },
+      "unbind": [
+        "6"
+      ]
+    }
+  }
+}
