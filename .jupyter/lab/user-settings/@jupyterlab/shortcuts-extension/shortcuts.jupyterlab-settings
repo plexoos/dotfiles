@@ -1,0 +1,67 @@
+{
+    "shortcuts": [
+        {
+            "command": "kernelmenu:restart-and-clear",
+            "keys": [
+                "9", "9", "9"
+            ],
+            "selector": "body"
+        },
+        {
+            "command": "notebook:hide-cell-outputs",
+            "keys": [
+                "Ctrl Alt ArrowLeft"
+            ],
+            "selector": ".jp-Notebook:focus"
+        },
+        {
+            "command": "notebook:show-cell-outputs",
+            "keys": [
+                "Ctrl Alt ArrowRight"
+            ],
+            "selector": ".jp-Notebook:focus"
+        },
+        {
+            "command": "notebook:hide-all-cell-outputs",
+            "keys": [
+                "Ctrl Shift ArrowLeft"
+            ],
+            "selector": ".jp-Notebook:focus"
+        },
+        {
+            "command": "notebook:show-all-cell-outputs",
+            "keys": [
+                "Ctrl Shift ArrowRight"
+            ],
+            "selector": ".jp-Notebook:focus"
+        },
+        {
+            "command": "notebook:hide-cell-code",
+            "keys": [
+                "Ctrl Alt ArrowUp"
+            ],
+            "selector": ".jp-Notebook:focus"
+        },
+        {
+            "command": "notebook:show-cell-code",
+            "keys": [
+                "Ctrl Alt ArrowDown"
+            ],
+            "selector": ".jp-Notebook:focus"
+        },
+        {
+            "command": "notebook:hide-all-cell-code",
+            "keys": [
+                "Ctrl Shift ArrowUp"
+            ],
+            "selector": ".jp-Notebook:focus"
+        },
+        {
+            "command": "notebook:show-all-cell-code",
+            "keys": [
+                "Ctrl Shift ArrowDown"
+            ],
+            "selector": ".jp-Notebook:focus"
+        }
+    ]
+}
