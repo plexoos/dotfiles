@@ -143,6 +143,27 @@ setup-star()
     export PATH="$PATH${STAR_BIN}"
 }
 
+# Print some environment variables
+my-env()
+{
+    echo -e "\t STAR_VERSION=           $STAR_VERSION"
+    echo -e "\t STAR_HOST_SYS=          $STAR_HOST_SYS"
+    echo -e "\t STAR=                   $STAR"
+    echo -e "\t OPTSTAR=                $OPTSTAR"
+    echo -e "\t STAR_LD_LIBRARY_PATH=   $STAR_LD_LIBRARY_PATH"
+    echo -e "\t CVSROOT=                $CVSROOT"
+    echo -e "\t ---"
+    echo -e "\t ROOTSYS=                $ROOTSYS"
+    echo -e "\t ROOT_LEVEL=             $ROOT_LEVEL"
+    echo -e "\t ---"
+    echo -e "\t CC=                     $CC"
+    echo -e "\t CXX=                    $CXX"
+    echo -e "\t GCC_LD_LIBRARY_PATH=    $GCC_LD_LIBRARY_PATH"
+    echo -e "\t ---"
+    echo -e "\t PATH=                   $PATH"
+    echo -e "\t LD_LIBRARY_PATH=        $LD_LIBRARY_PATH"
+}
+
 
 command_exists () {
     type "$1" &> /dev/null ;
