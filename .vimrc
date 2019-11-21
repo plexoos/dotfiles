@@ -68,6 +68,7 @@ set nolist
 set sessionoptions+=globals,resize,winpos
 set number
 set ignorecase
+set iskeyword-=:            " exclude : from whole word match
 set smartcase
 set wildmode=list:longest
 set textwidth=120
