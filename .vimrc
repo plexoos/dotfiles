@@ -72,6 +72,7 @@ set iskeyword-=:            " exclude : from whole word match
 set smartcase
 set wildmode=list:longest
 set textwidth=120
+set colorcolumn=+1          " highlight column after 'textwidth'
 set formatoptions=tcroql12
 set incsearch
 set shortmess+=A
