@@ -97,6 +97,53 @@ setup-gcc()
     export LD_LIBRARY_PATH="${GCC_LD_LIBRARY_PATH}$LD_LIBRARY_PATH"
 }
 
+# Set common environment variables for STAR software and ROOT. Usage:
+#
+#     setup-star [Release tag] [32 or 64 binaries]
+#
+# Examples:
+#
+#     setup-star
+#     setup-star SL18d
+#     setup-star DEV 64
+#
+setup-star()
+{
+    export STAR_VERSION=${1:-"DEV"}
+    export STAR_LEVEL=${STAR_VERSION}
+    local BUILD_BIN_BITS=${2:-"32"}
+    local STAR_ROOT_DIR=${3:-"/afs/rhic.bnl.gov/star/packages/"}
+
+    case "${BUILD_BIN_BITS}" in
+    "64")
+       BUILD_BIN_BITS="x8664_"
+       ;;
+    *)
+       BUILD_BIN_BITS=""
+       ;;
+    esac
+
+    export STAR_HOST_SYS="sl74_"${BUILD_BIN_BITS}"gcc485"
+    export STAR="${STAR_ROOT_DIR}/${STAR_VERSION}"
+    export OPTSTAR="/opt/star/${STAR_HOST_SYS}"
+
+    # Defined just for shorthand
+    local STAR_LIB="${STAR_ROOT_DIR}/${STAR_VERSION}/.${STAR_HOST_SYS}/lib"
+
+    # in case STAR_LD_LIBRARY_PATH is define remove it from LD_LIBRARY_PATH
+    export LD_LIBRARY_PATH="${LD_LIBRARY_PATH/"$STAR_LD_LIBRARY_PATH"/}"
+    export STAR_LD_LIBRARY_PATH=".${STAR_HOST_SYS}/lib:${STAR_LIB}:${OPTSTAR}/lib:"
+    export LD_LIBRARY_PATH="${STAR_LD_LIBRARY_PATH}$LD_LIBRARY_PATH"
+
+    export CVSROOT="/afs/rhic.bnl.gov/star/packages/repository"
+
+    #export DB_SERVER_LOCAL_CONFIG="/afs/rhic.bnl.gov/star/packages/conf/dbLoadBalancerLocalConfig_BNL.xml"
+    export PATH=${PATH/"${STAR_BIN}"/}
+    export STAR_BIN=":${STAR_ROOT_DIR}/${STAR_VERSION}/.${STAR_HOST_SYS}/bin"
+    export PATH="$PATH${STAR_BIN}"
+}
+
+
 command_exists () {
     type "$1" &> /dev/null ;
 }
