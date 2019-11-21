@@ -75,3 +75,5 @@ confirm()
 
 declare -x LANG="en_US"
 shopt -s direxpand
+# Silence terminal bell
+xset -b
