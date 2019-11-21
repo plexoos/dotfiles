@@ -2,8 +2,8 @@
 
 setenv GROUP_DIR /afs/rhic.bnl.gov/rhstar/group
 
-if ( -r  $GROUP_DIR/star_login.csh ) then
-   source $GROUP_DIR/star_login.csh
+if ( -r  $GROUP_DIR/star_cshrc.csh ) then
+   source $GROUP_DIR/star_cshrc.csh
 endif
 
 starver dev
