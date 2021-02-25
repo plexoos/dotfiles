@@ -15,6 +15,7 @@
    pager = true
 [core]
    editor = vim
+   pager = less
 [alias]
    dfw = diff --ignore-space-change -w -B
    st = status --column
