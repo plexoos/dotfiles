@@ -73,7 +73,7 @@ set smartcase
 set wildmode=list:longest
 set textwidth=120
 set colorcolumn=+1          " highlight column after 'textwidth'
-set formatoptions=tcroql12
+set formatoptions=tcroql1
 set incsearch
 set shortmess+=A
 set foldmethod=syntax
@@ -82,7 +82,7 @@ set foldlevel=2
 set foldlevelstart=1
 
 map <F2> :ls<CR>:b
-map <F3> a<C-R>=strftime("%d %b %Y")<CR><Esc>
+map <F3> a<C-R>=strftime("%Y-%m-%d")<CR><Esc>
 map <F4> a<C-R>=strftime(" (%X) ")<CR><Esc>
 map <F5> <Plug>ShowSpecialCharacters
 map <F6> <Plug>Reindent
