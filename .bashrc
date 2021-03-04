@@ -223,7 +223,7 @@ confirm()
 }
 
 
-declare -x LANG="en_US"
+declare -x LANG="en_US.UTF-8"
 shopt -s direxpand
 # Silence terminal bell
 xset -b
