@@ -72,7 +72,8 @@ set smartcase
 set wildmode=list:longest
 set textwidth=120
 set colorcolumn=+1          " highlight column after 'textwidth'
-set formatoptions=tcroql1
+set formatoptions=tcroql1n
+set formatlistpat=^\\s*[0-9-]\\+[\\]:.)}\\t\ ]\\s*
 set incsearch
 set shortmess+=A
 set foldmethod=syntax
