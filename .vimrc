@@ -25,7 +25,6 @@ map ! ^xxj
 set nocompatible        " Use Vim defaults (much better!)
 set bs=2                " allow backspacing over everything in insert mode
 set autoindent          " always set autoindenting on
-set cindent
 set smartindent
 set viminfo='20,\"5000  " read/write a .viminfo file, don't store more than 5000 lines of registers
 set history=500         " keep 500 lines of command line history
@@ -33,7 +32,7 @@ set ruler               " show the cursor position all the time
 set autochdir           " follow current/selected file directory
 
 " I don't like how the automatic indentation works in cmake files
-autocmd BufRead,BufNewFile *.cmake,CMakeLists.txt,*.cmake.in set nocindent
+autocmd FileType cpp set cindent
 
 " Turn swap files ON
 if isdirectory($HOME."/.vim-swap") == 0
