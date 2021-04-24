@@ -8,7 +8,7 @@ PS1="[\u@\H:\w]\n$"
 # Do not echo ^C back to terminal
 stty -ctlecho
 
-export LS_COLORS='di=01;94:fi=0:ln=31:pi=5:so=5:bd=5:cd=5:or=31:mi=0:ex=35'
+export LS_COLORS='di=01;94:fi=0:ln=31:pi=5:so=5:bd=5:cd=5:or=31:mi=0:ex=35:ow=0'
 export EDITOR=vim
 export VISUAL=vim
 
