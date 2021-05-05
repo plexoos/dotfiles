@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 # Command line
-PS1="[\u@\H:\w]\n$"
+PS1="[\e[1;35m\u@\H:\e[m\e[0;34m\w\e[m] \n$ "
 
 #bind "^[[3~" delete-char
 
