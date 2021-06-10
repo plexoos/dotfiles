@@ -169,13 +169,13 @@ command_exists () {
 }
 
 if command_exists gls ; then
-   export MYCMD_LS='gls --color=auto'
+   MYCMD_LS='gls --color=auto'
 else
-   export MYCMD_LS='ls --color=auto'
+   MYCMD_LS='ls --color=auto'
 fi
 
 alias ls="$MYCMD_LS"
-alias lh="$MYCMD_LS -lh"
+alias ll="$MYCMD_LS -lh"
 alias la="$MYCMD_LS -lah"
 alias hgrep="history | grep"
 alias mygitk="gitk --all&"
