@@ -81,7 +81,11 @@ set foldnestmax=1           " use =1 for typical C++ class
 set foldlevel=2
 set foldlevelstart=1
 " Set wide vim window width as default
-set winwidth=999
+if &diff
+   set winwidth=1
+else
+   set winwidth=999
+endif
 
 map <F2> :ls<CR>:b
 map <F3> a<C-R>=strftime("%Y-%m-%d")<CR><Esc>
