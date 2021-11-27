@@ -5,11 +5,13 @@ execute pathogen#infect()
 
 " Start Minimalist Vim Plugin Manager https://github.com/junegunn/vim-plug
 call plug#begin()
+
 Plug 'https://github.com/junegunn/vim-easy-align'
 Plug 'https://github.com/tweekmonster/braceless.vim'
 Plug 'https://github.com/jeetsukumaran/vim-indentwise'
-call plug#end()
+Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']}
 
+call plug#end()
 
 syntax enable
 set background=dark
@@ -139,3 +141,6 @@ function! DeleteInactiveBufs()
     endfor
     echomsg nWipeouts . ' buffer(s) wiped out'
 endfunction
+
+" Configure markdown
+let g:instant_markdown_autostart = 0
