@@ -2,6 +2,9 @@ if [ -f ~/.bashrc ]; then
     . ~/.bashrc
 fi
 
+if [ -f ~/.git-completion.bash ]; then
+  . ~/.git-completion.bash
+fi
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
