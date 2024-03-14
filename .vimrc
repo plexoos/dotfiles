@@ -102,13 +102,12 @@ command! TrimAndExpand :call TrimAndExpand()
 " DoxygenToolkit settings (http://www.vim.org/scripts/script.php?script_id=987)
 let g:DoxygenToolkit_authorName="Dmitri Smirnov <d.s@plexoos.com>"
 
-set statusline=%f\ %h%m%r%w\ b%n
 set diffopt+=iwhite
 
 " vim-airline settings
 set laststatus=2
-let g:airline_theme = 'sol'
-let g:airline_section_c = '%F %h%m%r%w b%n'
+let g:airline_theme = 'solarized'
+let g:airline_section_z = '%p%% : %l : %c'
 " Prevent airline status line from being truncated when windows split vertically
 let g:airline#extensions#default#section_truncate_width = {}
 
