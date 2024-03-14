@@ -21,3 +21,18 @@ fi
 unset __conda_setup
 # <<< conda initialize <<<
 
+
+# >>> juliaup initialize >>>
+
+# !! Contents within this block are managed by juliaup !!
+
+case ":$PATH:" in
+    *:/Users/dsmirnov/.juliaup/bin:*)
+        ;;
+
+    *)
+        export PATH=/Users/dsmirnov/.juliaup/bin${PATH:+:${PATH}}
+        ;;
+esac
+
+# <<< juliaup initialize <<<
