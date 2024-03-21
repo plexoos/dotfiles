@@ -1,6 +1,7 @@
 [user]
    name = Dmitri Smirnov
    email = dmixsmi@gmail.com
+   signingkey = BC6D9566906E489D
 [diff]
    tool = vimdiff
    context = 3
@@ -48,3 +49,7 @@
     smudge = git-lfs smudge -- %f
     process = git-lfs filter-process
     required = true
+[commit]
+   gpgsign = true
+[credential]
+   helper = store
