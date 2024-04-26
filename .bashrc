@@ -38,7 +38,7 @@ mkcdir() { mkdir -p -- "$1" && cd -P -- "$1"; }
 rmrec()
 {
     file_pattern=${1:-*.orig}
-    file_list=(`find "${2:-./}" -name "${file_pattern}"`)
+    file_list=( $(find "${2:-.}" -name "${file_pattern}") )
 
     if [ ${#file_list[@]} -eq 0 ]
     then
