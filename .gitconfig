@@ -34,7 +34,7 @@
    rb = rebase
    rba = rebase --abort
    rbc = rebase --cont
-   rbm = rebase -i master
+   rbm = rebase -i origin/main
    rb10 = rebase -i HEAD~10
    rb20 = rebase -i HEAD~20
    lg1 = log --graph --abbrev-commit --decorate --date=relative --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %C(green)%an%C(reset)%C(bold yellow)%d%C(reset)'
@@ -53,3 +53,5 @@
    gpgsign = true
 [credential]
    helper = store
+[includeIf "gitdir:~/work_v/**"]
+   path = ~/work_v/.gitconfig
