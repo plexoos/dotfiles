@@ -1,4 +1,4 @@
-bind generic + !@bash -c "echo -n %(commit) | cut -c 1-8 | xclip -r"
+bind generic + !bash -c "echo %(commit) | cut -c 1-8 | xclip -r"
 
 bind main a !git commit --amend
 bind main ^ !git cherry-pick %(commit)
